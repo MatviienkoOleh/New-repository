@@ -14,7 +14,6 @@
 			padding: 20px;
 			display: inline-block;
 		}
-		
 		.input1 {
 			margin-top: 5px;
 			margin-bottom: 5px;
@@ -30,7 +29,6 @@
 	<input type="text" id ="some_text" class="input1"> <br>
 	<button id ="but" >Click me!</button>
 	<hr>
-	
 	<p id="output"></p>
 	</div>
 	
@@ -40,19 +38,18 @@
 		var text = document.getElementById('some_text').value;
 		let textPush = document.getElementById('output');
 		textPush.innerHTML = text;
-		
-		if(text.length > 3){
+		const regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+		if(!regex.test(text) && text.length > 3   ){
 			textPush.style.backgroundColor = "green";
-		}else if(!/^[A-Za-z0-9]/.test(text) ) {
+		}else if(!/^[A-Za-z0-9]/.test(text)) {
 			textPush.style.backgroundColor = "red";	  
+		}else{
+			return textPush;
 		}
 		document.getElementById('some_text').value = "";		
 	};
 	document.getElementById('but').addEventListener('click', text_output);
 		
-		
 	</script>
-	
-
 </body>
 </html>
