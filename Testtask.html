@@ -41,10 +41,10 @@
 		let textPush = document.getElementById('output');
 		textPush.innerHTML = text;
 		
-		if(!/^[A-Za-z0-9]/.test(text) ) {
-			textPush.style.backgroundColor = "red";	  
-		}else if(text.length > 3){
+		if(text.length > 3){
 			textPush.style.backgroundColor = "green";
+		}else if(!/^[A-Za-z0-9]/.test(text) ) {
+			textPush.style.backgroundColor = "red";	  
 		}
 		document.getElementById('some_text').value = "";		
 	};
