@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	
+	<style>
+		.block {
+			width : 300px;	
+			background : #a3a3a3;
+			border: 2px solid black;
+			margin-top: 20px;
+			margin-left:33%;
+			padding: 20px;
+			display: inline-block;
+		}
+		
+		.input1 {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		p {
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body>
+	<div class ="block">
+	<lable id="info"><b>Type info:</b></lable><br>
+	<input type="text" id ="some_text" class="input1"> <br>
+	<button id ="but" >Click me!</button>
+	<hr>
+	
+	<p id="output"></p>
+	</div>
+	
+	<script>
+		
+	function text_output() {
+		var text = document.getElementById('some_text').value;
+		let textPush = document.getElementById('output');
+		textPush.innerHTML = text;
+		
+		if(!/^[A-Za-z0-9]/.test(text) ) {
+			textPush.style.backgroundColor = "red";	  
+		}else if(text.length > 3){
+			textPush.style.backgroundColor = "green";
+		}
+		document.getElementById('some_text').value = "";		
+	};
+	document.getElementById('but').addEventListener('click', text_output);
+		
+		
+	</script>
+	
+
+</body>
+</html>
