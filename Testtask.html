@@ -39,7 +39,7 @@
 		let textPush = document.getElementById('output');
 		textPush.innerHTML = text;
 		let regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-			if(/^[A-Za-z0-9]/.test(text) && text.length > 3 && regex.test(text)){
+			if(text.length > 3 && regex.test(text)){
 				textPush.style.backgroundColor = "red";
 			}else if(!regex.test(text) && text.length > 3){
 				textPush.style.backgroundColor = "green";
